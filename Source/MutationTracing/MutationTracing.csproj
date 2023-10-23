@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Nuget dependencies -->
+    <PackageReference Include="Krafs.Publicizer" Version="2.1.0" />
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3558" />
+
+    <Reference Include="..\..\..\Multiplayer\AssembliesCustom\Multiplayer.dll">
+      <Private>False</Private>
+    </Reference>
+
+    <Reference Include="..\..\..\Multiplayer\AssembliesCustom\MultiplayerCommon.dll">
+      <Private>False</Private>
+    </Reference>
+
+    <Reference Include="..\..\..\Prepatcher\Assemblies\0PrepatcherAPI.dll">
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp;0Harmony" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAssembly\DataAssembly.csproj" />
+  </ItemGroup>
+
+</Project>
